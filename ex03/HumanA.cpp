@@ -1,9 +1,8 @@
-#include "../includes/HumanA.hpp"
+#include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon type)
+HumanA::HumanA(std::string name, Weapon &type) : name(name), type(&type)
 {
-	this->name = name;
-	this->type = &type;
+	return;
 }
 
 void HumanA::attack()

@@ -1,6 +1,6 @@
 NAME        = program
 
-SRCS        = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS        = main.cpp
 
 OBJS        = ${SRCS:.cpp=.o}
 

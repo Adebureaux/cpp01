@@ -1,11 +1,11 @@
-#include "../includes/Weapon.hpp"
+#include "Weapon.hpp"
 
 Weapon::Weapon(std::string type)
 {
 	this->type = type;
 }
 
-std::string Weapon::getType() const
+std::string const &Weapon::getType()
 {
 	return (this->type);
 }
