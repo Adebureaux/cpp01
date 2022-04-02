@@ -1,6 +1,6 @@
 NAME        = program
 
-SRCS        = srcs/main.cpp srcs/Harl.cpp
+SRCS        = main.cpp Harl.cpp
 
 OBJS        = ${SRCS:.cpp=.o}
 
@@ -24,4 +24,3 @@ fclean: clean
 re:        fclean all
 
 .PHONY: all clean fclean re
-
