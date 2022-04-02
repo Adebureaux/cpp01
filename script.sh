@@ -31,7 +31,6 @@ echo "#ifndef ${FILENAME1_DEFINE}_HPP
 
 #include <iostream>
 #include <string>
-#include <cstring>
 
 class $FILENAME1_COPY
 {
@@ -57,7 +56,6 @@ if [ -n "$FILENAME2" ]; then
 
 #include <iostream>
 #include <string>
-#include <cstring>
 
 class $FILENAME2_COPY
 {
@@ -84,7 +82,6 @@ if [ -n "$FILENAME3" ]; then
 
 #include <iostream>
 #include <string>
-#include <cstring>
 
 class $FILENAME3_COPY
 {
@@ -111,7 +108,6 @@ if [ -n "$FILENAME4" ]; then
 
 #include <iostream>
 #include <string>
-#include <cstring>
 
 class $FILENAME4_COPY
 {
@@ -138,7 +134,6 @@ if [ -n "$FILENAME5" ]; then
 
 #include <iostream>
 #include <string>
-#include <cstring>
 
 class $FILENAME5_COPY
 {
