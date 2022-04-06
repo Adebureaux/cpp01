@@ -21,7 +21,7 @@ void Harl::complain(std::string level)
 	}
 	if (lvl == -1)
 	{
-		std::cout << "[  Probably complaining about insignificant problems ]" << std::endl;
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 		return;
 	}
 	for (int i = lvl; i > -1; i--)
