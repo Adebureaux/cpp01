@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	Zombie* dan = Zombie::zombieHorde(10, "Dan");
 	for (int i = 0; i < 10; i++)
@@ -33,5 +33,7 @@ int main(int ac, char **av)
 
 	Zombie* failtest1 = Zombie::zombieHorde(-100, "failed1");
 	Zombie* failtest2 = Zombie::zombieHorde(0, "failed2");
+	(void)failtest1;
+	(void)failtest2;
 	return (0);	
 }

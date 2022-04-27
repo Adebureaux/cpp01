@@ -26,7 +26,7 @@ class Harl
 	};
 	void error(void)
 	{
-		std::cout << "[ ERROR ]" << std::endl << "This is unacceptable, I want to speak to the manager now." << std::endl;
+		std::cout << "[ ERROR ]" << std::endl << "This is unacceptable, I want to speak to the manager now.";
 	}
 };
 

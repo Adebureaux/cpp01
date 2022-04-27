@@ -2,7 +2,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	{
 		Weapon club = Weapon("crude spiked club");

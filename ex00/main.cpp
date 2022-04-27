@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-int main(int ac, char **av)
+int main(void)
 {
 	Zombie::randomChump("random1");
 	Zombie* zombie1 = Zombie::newZombie("zombie1");
@@ -29,5 +29,11 @@ int main(int ac, char **av)
 	Zombie::randomChump("pierre");
 	Zombie::randomChump("paul");
 	Zombie::randomChump("jacques");
+	delete zombie1;
+	delete zombie2;
+	delete zombie3;
+	delete melenchon;
+	delete zemmour;
+	delete macron;
 	return (0);
 }
