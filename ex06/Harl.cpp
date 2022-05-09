@@ -1,37 +1,40 @@
 #include "Harl.hpp"
 
-Harl::Harl()
-{
-	return;
-}
+Harl::Harl() {}
+
+Harl::~Harl() {}
 
 void Harl::complain(std::string level)
 {
-	const std::string level_ref[4] = { "ERROR", "WARNING", "INFO", "DEBUG" };
-	void (Harl::*fptr[4])(void) = { &Harl::error, &Harl::warning, &Harl::info, &Harl::debug };
-	int lvl = -1;
+	const std::string level_ref[4] = { "DEBUG", "INFO", "WARNING", "ERROR" };
+	void (Harl::*fptr[4])(void) = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
 
 	for (int i = 0; i < 4; i++)
 	{
 		if (!level.compare(level_ref[i]))
 		{
-			lvl = i;
-			break;
+			(this->*fptr[i])();
+			return;
 		}
-	}
-	if (lvl == -1)
-	{
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-		return;
-	}
-	for (int i = lvl; i > -1; i--)
-	{
-		(this->*fptr[i])();
-		std::cout << std::endl;
 	}
 }
 
-Harl::~Harl()
+void Harl::debug(void)
 {
-	return;
+	std::cout << "[DEBUG] > " << "Debug messages contain contextual information. They are mostly used for problem diagnosis." << std::endl;
+};
+
+void Harl::info(void)
+{
+	std::cout << "[INFO] > " << "These messages contain extensive information. They are helpful for tracing program execution in a production environment." << std::endl;
+};
+
+void Harl::warning(void)
+{
+	std::cout << "[WARNING] > "  << "Warning messages indicate a potential issue in the system. However, it can be handled or ignored." << std::endl;
+};
+
+void Harl::error(void)
+{
+	std::cout << "[ERROR] > " << "These messages indicate an unrecoverable error has occurred. This is usually a critical issue that requires manual intervention." << std::endl;
 }
