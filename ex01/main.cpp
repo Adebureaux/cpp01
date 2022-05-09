@@ -5,14 +5,13 @@ int main(void)
 	Zombie* dan = Zombie::zombieHorde(10, "Dan");
 	for (int i = 0; i < 10; i++)
 		dan[i].announce();
-	delete [] dan;
 
 	std::cout << std::endl;
 
 	Zombie* rob = Zombie::zombieHorde(10, "Rob");
-	rob[0].announce();
-	rob[9].announce();
-	delete [] rob;
+	std::cout << "address of rob     : " << rob << std::endl;
+	std::cout << "address of &rob[0] : " << &rob[0] << std::endl;
+	std::cout << "address of &rob[1] : " << &rob[1] << std::endl; 
 
 	std::cout << std::endl;
 
@@ -26,6 +25,8 @@ int main(void)
 	tango[1].announce();
 	charlie[2].announce();
 	delta[0].announce();
+	delete [] dan;
+	delete [] rob;
 	delete [] tango;
 	delete [] delta;
 	delete [] echo;
@@ -33,7 +34,7 @@ int main(void)
 
 	Zombie* failtest1 = Zombie::zombieHorde(-100, "failed1");
 	Zombie* failtest2 = Zombie::zombieHorde(0, "failed2");
-	(void)failtest1;
-	(void)failtest2;
+	std::cout << std::endl << "address of failtest1 : " << failtest1 << std::endl;
+	std::cout << "address of failtest2 : " << failtest2 << std::endl;
 	return (0);	
 }

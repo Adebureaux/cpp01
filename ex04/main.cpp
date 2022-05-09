@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <sstream>
 
 int main(int ac, char **av)
 {
@@ -9,7 +10,12 @@ int main(int ac, char **av)
 	std::ifstream file(av[1]);
 	if (!file.is_open())
 		return (std::cout << "Error: cannot open the file '" << av[1] << "'" << std::endl || 1);
-	std::string const original((std::istreambuf_iterator<char>(file)), std::istreambuf_iterator<char>());
+
+	// Copy the file into a std::string
+	std::stringstream tmp;
+	tmp << file.rdbuf();
+	std::string const original = tmp.str();
+
 	std::string const s1 = av[2];
 	if (!s1[0])
 		return (std::cout << "Error: second argument shouldn't be an empty string" << std::endl || 1);
@@ -33,8 +39,12 @@ int main(int ac, char **av)
 			break;
 		}
 	}
+
+	// Create the .replace file with the new content
 	std::string filename = av[1];
-	std::ofstream outfile(filename.append(".replace"));
+	filename.append(".replace");
+	std::ofstream outfile(filename.c_str());
+
 	if (!outfile.is_open())
 		return (std::cout << "Error: cannot create the file '" << filename << "'" << std::endl || 1);
 	outfile << copy;

@@ -1,6 +1,6 @@
 NAME        = program
 
-SRCS        = main.cpp Zombie.cpp zombieHorde.cpp
+SRCS        = main.cpp Zombie.cpp
 
 OBJS        = ${SRCS:.cpp=.o}
 

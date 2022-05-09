@@ -1,9 +1,8 @@
 #include "Harl.hpp"
 
-Harl::Harl()
-{
-	return;
-}
+Harl::Harl() {}
+
+Harl::~Harl() {}
 
 void Harl::complain(std::string level)
 {
@@ -20,7 +19,22 @@ void Harl::complain(std::string level)
 	}
 }
 
-Harl::~Harl()
+void Harl::debug(void)
 {
-	return;
+	std::cout << "[DEBUG] > " << "Debug messages contain contextual information. They are mostly used for problem diagnosis." << std::endl;
+};
+
+void Harl::info(void)
+{
+	std::cout << "[INFO] > " << "These messages contain extensive information. They are helpful for tracing program execution in a production environment." << std::endl;
+};
+
+void Harl::warning(void)
+{
+	std::cout << "[WARNING] > "  << "Warning messages indicate a potential issue in the system. However, it can be handled or ignored." << std::endl;
+};
+
+void Harl::error(void)
+{
+	std::cout << "[ERROR] > " << "These messages indicate an unrecoverable error has occurred. This is usually a critical issue that requires manual intervention." << std::endl;
 }
